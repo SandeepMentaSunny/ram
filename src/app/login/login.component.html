@@ -1,0 +1,18 @@
+<div class="log-form">
+    <h2>Login to your account</h2>
+    <form [formGroup]="loginForm">
+        <div class="form-group" [ngClass]="{'has-error':loginForm.controls['email'].invalid && loginForm.controls['email'].touched}">
+            <input type="text" title="username" placeholder="Email Id" type="text" [formControl]="loginForm.controls['email']"/>
+            <span *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="help-block">{{AppLitteralsConfig.required}}</span>
+            <span *ngIf="!loginForm.controls['email'].hasError('required') && (loginForm.controls['email'].invalid && loginForm.controls['email'].touched)" class="help-block">{{AppLitteralsConfig.email}}</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error':loginForm.controls['password'].invalid && loginForm.controls['password'].touched}">
+            <input type="password" title="username" placeholder="Password" type="password" [formControl]="loginForm.controls['password']" />
+            <span *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="help-block">{{AppLitteralsConfig.required}}</span>
+        </div>
+        <button type="submit" class="btn" (click)="logIn()">Login</button>
+        <a class="forgot" href="javascript:;">Forgot Password?</a>
+    </form>
+    <a class="signup" href="javascript:;" routerLink="/signup">Signup</a>
+</div>
+<!--end log form -->

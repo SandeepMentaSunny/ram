@@ -1,0 +1,13 @@
+div{
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li.nav-item{
+            .dropdown-menu{
+                left: 80% !important;
+                top: -37px !important;
+            }
+        }
+    }
+}

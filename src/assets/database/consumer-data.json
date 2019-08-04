@@ -1,0 +1,26 @@
+[{
+    "name": "ey",
+    "email": "ey@ey.com",
+    "password": "12345",
+    "permissionList": [
+        {
+            "action": "userGet",
+            "projectId": "12345"
+        }
+    ]
+},
+{
+    "name": "ey",
+    "email": "ey@ey.com",
+    "password": "12345",
+    "permissionList": [
+        {
+            "action": "userGet",
+            "projectId": "12345"
+        },
+        {
+            "action": "userPut",
+            "projectId": "67891"
+        }
+    ]
+}]

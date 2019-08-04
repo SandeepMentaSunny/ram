@@ -1,0 +1,43 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">{{config?.modalHeader}}</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="log-form">
+                <form [formGroup]="consumerForm">
+                    <div class="form-group"
+                        [ngClass]="{'has-error':consumerForm.controls['name'].invalid && consumerForm.controls['name'].touched}">
+                        <input title="username" placeholder="Name" type="text"
+                            [formControl]="consumerForm.controls['name']" [value]="consumerData?.name"/>
+                            <span *ngIf="consumerForm.controls['name'].hasError('required') && consumerForm.controls['name'].touched"
+                            class="help-block">{{AppLitteralsConfig.required}}</span>
+                        <span *ngIf="!consumerForm.controls['name'].hasError('required') && consumerForm.controls['name'].invalid && consumerForm.controls['name'].touched" class="help-block">{{AppLitteralsConfig.nameValidator}}</span>
+                    </div>
+                    <div class="form-group"
+                        [ngClass]="{'has-error':consumerForm.controls['email'].invalid && consumerForm.controls['email'].touched}">
+                        <input title="email Id" placeholder="Email ID" type="email"
+                            [formControl]="consumerForm.controls['email']" [value]="consumerData?.email" />
+                        <span *ngIf="consumerForm.controls['email'].hasError('required') && consumerForm.controls['email'].touched"
+                            class="help-block">{{AppLitteralsConfig.required}}</span>
+                        <span *ngIf="!consumerForm.controls['email'].hasError('required') && (consumerForm.controls['email'].invalid && consumerForm.controls['email'].touched)"
+                            class="help-block">{{AppLitteralsConfig.email}}</span>
+                    </div>
+                    <div class="form-group" [ngClass]="{'has-error':consumerForm.controls['password'].invalid && consumerForm.controls['password'].touched}">
+                        <input title="password" placeholder="Password" type="password"
+                            [formControl]="consumerForm.controls['password']" [value]="consumerData?.password" />
+                        <span *ngIf="consumerForm.controls['password'].hasError('required') && consumerForm.controls['password'].touched" class="help-block">{{AppLitteralsConfig.required}}</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-success" (click)="saveConsumer()">{{config?.buttonValue}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-primary" (click)="createConsumer()"><i class="fas fa-user"></i> Add
+    Consumer</button>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let consumer of consumerData; let i = index">
+                <td>{{i+1}}.</td>
+                <td>{{consumer.name}}</td>
+                <td>{{consumer.email}}</td>
+                <td>{{consumer.password}}</td>
+                <td>
+                    <button class="btn-light btn btn-sm" (click)="editConsumer(consumer)"><i class="fas fa-edit"></i>
+                        Edit</button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal">
+    <app-modal [consumerData]="consumer" [config]="config" (saveConsumerData)="saveConsumer($event)"></app-modal>
+</div>

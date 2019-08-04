@@ -1,0 +1,17 @@
+.container-fluid{
+    padding: 0;
+}
+.content-wrapper{
+    width: 100%;
+    margin-top: 56px;
+    .sidenav{
+        width: 18%;
+        float: left;
+        height: 94vh;
+        background-color: #f8f9fa!important;
+    }
+    .content{
+        width: 80%;
+        float: right;
+    }
+}

@@ -1,0 +1,17 @@
+button.btn-primary{
+    float: right;
+    margin: 115px 115px 10px;
+}
+.container{
+    table{
+        tbody{
+            tr{
+                td:last-child{
+                    button{
+                        margin: 0 10px;
+                    }    
+                }
+            }
+        }
+    }
+}
